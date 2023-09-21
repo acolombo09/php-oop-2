@@ -18,6 +18,9 @@ require_once __DIR__ . './models/shop/Categoria.php';
 require_once __DIR__ . './models/shop/Cani.php';
 require_once __DIR__ . './models/shop/Gatti.php';
 
+var_dump(new Cani());
+var_dump(new Gatti());
+var_dump(new Categoria("Pesci", "pesce.svg"));
 
 ?>
 
@@ -34,7 +37,7 @@ require_once __DIR__ . './models/shop/Gatti.php';
   
   <!-- My css link -->
   <link rel="stylesheet" href="./style.css">
-  <title>PHP | OOP-1</title>
+  <title>PHP | OOP-2</title>
 </head>
 <body>
   <div class="container-fluid py-4 bg-light">
@@ -48,9 +51,14 @@ require_once __DIR__ . './models/shop/Gatti.php';
         <div class="row row-cols-3 bg-success bg-opacity-50 g-5 mt-3 pb-5">
           
           <div class="col d-flex flex-column justify-content-center align-items-center text-center">
+            <?php 
+              // foreach ($movies as $movie) {
+
+              // };
+            ?>
             <div class="card bg-dark bg-opacity-25" style="height: 420px; width: 351px;">
               <div class="card-img-top py-4 d-flex flex-column justify-content-center align-items-center">
-                <img :src="immagine" alt="-" style="width: 250px; height: 250px;">
+                <img src="immagine" alt="-" style="width: 250px; height: 250px;">
               </div>
               <div class="card-body">
                 <h5 class="card-title text-white">{{ titolo }}</h5>

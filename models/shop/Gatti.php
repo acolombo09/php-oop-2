@@ -5,7 +5,8 @@ class Gatti extends Categoria{
   protected $name = 'Gatti';
   protected $icon = 'gatto.svg';
 
-  // Setto la constructor function
+  // Setto la constructor function vuota
+  // fai finta di nulla e non richiedere parametri
   function __construct() {
 
   }
