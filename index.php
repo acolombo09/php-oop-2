@@ -21,6 +21,7 @@ require_once __DIR__ . './models/shop/Gatti.php';
 require_once __DIR__ . './models/shop/Prodotto.php';
 require_once __DIR__ . './models/shop/Cibo.php';
 require_once __DIR__ . './models/shop/Gioco.php';
+require_once __DIR__ . './models/shop/Cuccia.php';
 
 var_dump(new Cani());
 var_dump(new Gatti());
@@ -29,6 +30,8 @@ var_dump(new Gatti());
 // var_dump(new Prodotto("Cibo per cani", "Cibo per cani", 10, new Cani()));
 var_dump(new Cibo("Cibo per gatti", "Cibo per gatti gourmet", 6.30 , new Gatti()));
 var_dump(new Gioco("Palla rotonda", "palla di 20cm di diametro", 2.61 , new Gatti()));
+var_dump(new Cuccia("Cuccia domus", "cuccia in legno per esterni", 269.99 , new Cani()));
+var_dump(new Cuccia("Cuccia zampa", "cuccia in pile per interni", 29.99 , new Gatti()));
 
 ?>
 
