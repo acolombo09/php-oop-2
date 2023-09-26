@@ -30,8 +30,9 @@ var_dump(new Gatti());
 // var_dump(new Prodotto("Cibo per cani", "Cibo per cani", 10, new Cani()));
 var_dump(new Cibo("Cibo per gatti", "Cibo per gatti gourmet", 6.30 , new Gatti()));
 var_dump(new Gioco("Palla rotonda", "palla di 20cm di diametro", 2.61 , new Gatti()));
-var_dump(new Cuccia("Cuccia domus", "cuccia in legno per esterni", 269.99 , new Cani()));
-var_dump(new Cuccia("Cuccia zampa", "cuccia in pile per interni", 29.99 , new Gatti()));
+$Cuccia1 = new Cuccia("Cuccia domus", "cuccia in legno per esterni", 269.99 , new Cani());
+$Cuccia2 = new Cuccia("Cuccia zampa", "cuccia in pile per interni", 29.99 , new Gatti());
+$CucceArray = array($Cuccia1, $Cuccia2);
 
 ?>
 
@@ -59,26 +60,22 @@ var_dump(new Cuccia("Cuccia zampa", "cuccia in pile per interni", 29.99 , new Ga
             <img src="./imgs/vuejs-logo.png" alt="" width="60" height="45">
           </a>
         </div>
+        <h2>Cucce</h2>
         <div class="row row-cols-3 bg-success bg-opacity-50 g-5 mt-3 pb-5">
-          
-          <div class="col d-flex flex-column justify-content-center align-items-center text-center">
-            <?php 
-              // foreach ($movies as $movie) {
-
-              // };
-            ?>
-            <div class="card bg-dark bg-opacity-25" style="height: 420px; width: 351px;">
-              <div class="card-img-top py-4 d-flex flex-column justify-content-center align-items-center">
-                <img src="immagine" alt="-" style="width: 250px; height: 250px;">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title text-white">{{ titolo }}</h5>
-                <h6 class="card-text text-light fw-light">{{ prezzo }}</h6>
-                <h5 class="card-text text-white"><small>{{ categoria }}</small></h5>
+          <?php foreach ($CucceArray as $Cuccia) { ?>
+            <div class="col d-flex flex-column justify-content-center align-items-center text-center">
+              <div class="card bg-dark bg-opacity-25" style="height: 420px; width: 351px;">
+                <div class="card-img-top py-4 d-flex flex-column justify-content-center align-items-center">
+                  <img src="<?php echo $Categoria->getIcon(); ?>" alt="-" style="width: 250px; height: 250px;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-white"><?php echo $DogHouse->getName(); ?></h5>
+                  <h6 class="card-text text-light fw-light">Material: <?php echo $Cuccia->getFabric(); ?></h6>
+                  <h5 class="card-text text-white"><small>Price: $<?php echo $Prodotto->getPrice(); ?></small></h5>
+                </div>
               </div>
             </div>
-          </div>
-
+            <?php } ?>
         </div>
       </div>
     </div>
